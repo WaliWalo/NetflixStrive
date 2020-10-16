@@ -51,7 +51,41 @@ addNewMovie(
   "/images/movies/1-2.jpg",
   false
 );
-console.log(movies);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
 //2. create genre array
@@ -62,7 +96,7 @@ const genreInp = function () {
   genres.forEach((genre) => {
     let item = document.createElement("a");
     item.setAttribute("class", "dropdown-item");
-    item.setAttribute("href", "#");
+    item.setAttribute("onclick", "filterByGenre(this.innerText)");
     item.setAttribute("value", genre);
     let text = document.createTextNode(genre);
     item.appendChild(text);
@@ -74,7 +108,9 @@ const genreInp = function () {
 //1. Get genre
 //2. remove main section
 //3. create movies by genre
-const filterByGenre = function (genre) {};
+const filterByGenre = function (genre) {
+  console.log(genre);
+};
 
 //FUNCTION FOR HOME ON CLICK
 //1. on click remove main section
@@ -99,7 +135,6 @@ const createAllCard = function () {
   container.appendChild(row);
   //for each movie create a card
   for (let i = 0; i < movies.length; i++) {
-    console.log(movies[i]);
     let card = document.createElement("div");
     card.setAttribute("class", "card");
     row.appendChild(card);
