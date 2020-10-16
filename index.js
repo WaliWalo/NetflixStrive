@@ -1,11 +1,10 @@
 // Movie Object
-movies = [];
 
-movie = {
-  title: "",
+const movie = {
+  name: "",
+  date: "",
   genre: "",
-  date_released: "",
-  img_path: "",
+  url: "",
 };
 
 genre = [
@@ -25,7 +24,7 @@ genre = [
   "Martial Arts",
 ];
 
-const { func } = require("prop-types");
+//const { func } = require("prop-types");
 
 //movie class with name, url, category
 const movies = [
@@ -36,6 +35,20 @@ const movies = [
     url: "images/movies/1-1.jpg",
   },
 ];
+
+// Function to add new Movies
+const addNewMovie = function (name, date, genre, url, watched) {
+  // clone movie object
+  let newMovie = Object.assign({}, movie);
+  newMovie.name = name;
+  newMovie.date = date;
+  newMovie.genre = genre;
+  newMovie.url = url;
+  newMovie.watched = watched;
+
+  // push new movie to Movies array
+  movies.push(newMovie);
+};
 
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
@@ -96,4 +109,13 @@ const createMain = function () {
   createAllCard();
 };
 
-createMain();
+window.onload = function () {
+  addNewMovie(
+    "The Terror Season 1",
+    "2019",
+    genre[0],
+    "./images/movies/1-2.jpg",
+    false
+  );
+  console.log(movies);
+};
