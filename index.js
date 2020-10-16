@@ -110,6 +110,41 @@ const genreInp = function () {
 //3. create movies by genre
 const filterByGenre = function (genre) {
   console.log(genre);
+  let main = document.querySelector("#main");
+  main.remove();
+  let newMain = document.createElement("div");
+  newMain.classList.add("container");
+  newMain.setAttribute("id", "main");
+  console.log(movies[0].genre);
+  let row = document.createElement("div");
+  let head = document.createElement("h4");
+  let text = document.createTextNode("TEST");
+  newMain.appendChild(row);
+  head.appendChild(text);
+  row.setAttribute("class", "row");
+  let container = document.querySelector("#main");
+  container.appendChild(head);
+  container.appendChild(row);
+  //if movie.genre = genre create card
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].genre === genre) {
+      let card = document.createElement("div");
+      card.setAttribute("class", "card");
+      row.appendChild(card);
+      let img = document.createElement("img");
+      img.setAttribute("src", movies[i].url);
+      img.setAttribute("class", "card-img-top");
+      card.appendChild(img);
+      let cardBody = document.createElement("div");
+      cardBody.setAttribute("class", "card-img-overlay");
+      let cardTitle = document.createElement("h5");
+      cardTitle.setAttribute("class", "card-title");
+      let cardTitleText = document.createTextNode(movies[i].name);
+      cardTitle.appendChild(cardTitleText);
+      cardBody.appendChild(cardTitle);
+      card.appendChild(cardBody);
+    }
+  }
 };
 
 //FUNCTION FOR HOME ON CLICK
