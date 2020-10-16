@@ -1,9 +1,4 @@
-
 // Movie Object
-
-
-const movie = {}
-
 // initialize movie object
 let movie = {
   name: "",
@@ -31,25 +26,11 @@ genres = [
   "Martial Arts",
 ];
 
-
 //movie class with name, url, category
-const movies = [
-  {
-    name: "adnaskjl",
-    date: "2019",
-    genre: "Horror",
-    url: "images/movies/1-1.jpg",
-  },
-];
-
+const movies = [];
 
 // Function to add new Movies
 const addNewMovie = function (name, date, genre, url, watched) {
-  // clone movie object
-  let newMovie = Object.assign({}, movie);
-
-// Add New Movie
-const addMovie = function (name, date, genre, url, watched) {
   const newMovie = Object.assign({}, movie);
 
   newMovie.name = name;
@@ -58,13 +39,19 @@ const addMovie = function (name, date, genre, url, watched) {
   newMovie.url = url;
   newMovie.watched = watched;
 
-
   // push new movie to Movies array
 
   // push to movies array
   movies.push(newMovie);
 };
-
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+console.log(movies);
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
 //2. create genre array
@@ -80,7 +67,6 @@ const genreInp = function () {
     let text = document.createTextNode(genre);
     item.appendChild(text);
     inp.appendChild(item);
-    console.log(genre);
   });
 };
 
@@ -137,21 +123,5 @@ const createMain = function () {
   createAllCard();
 };
 
-
-window.onload = function () {
-  addNewMovie(
-    "The Terror Season 1",
-    "2019",
-    genre[0],
-    "./images/movies/1-2.jpg",
-    false
-  );
-  console.log(movies);
-
-// Onload Method
-window.onload = function () {
-  console.log("This is working");
-
-};
 createMain();
 genreInp();
