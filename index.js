@@ -25,8 +25,6 @@ genre = [
   "Martial Arts",
 ];
 
-const { func } = require("prop-types");
-
 //movie class with name, url, category
 const movies = [
   {
