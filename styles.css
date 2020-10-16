@@ -1,0 +1,9 @@
+.little-element {
+  color: white;
+  background: red;
+  position: absolute;
+  bottom: 10px;
+  right: 16px;
+  height: 33px;
+  padding: 0.6rem;
+}

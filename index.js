@@ -6,6 +6,7 @@ let movie = {
   genre: "",
   url: "",
   watched: false,
+  trending: false,
 };
 genres = {
   drama: "Drama",
@@ -26,7 +27,7 @@ genres = {
 const movies = [];
 
 // Function to add new Movies
-const addNewMovie = function (name, date, genre, url, watched) {
+const addNewMovie = function (name, date, genre, url, watched, trending) {
   // clone movie object
   let newMovie = Object.assign({}, movie);
   newMovie.name = name;
@@ -44,16 +45,18 @@ const addNewMovie = function (name, date, genre, url, watched) {
 const loadMovies = function () {
   addNewMovie(
     "Rogue",
-    "2020-08-20",
+    "2020",
     genres.romance,
     "https://image.tmdb.org/t/p/w220_and_h330_face/uOw5JD8IlD546feZ6oxbIjvN66P.jpg",
-    false
+    false,
+    true
   );
   addNewMovie(
     "Welcome to Sudden Death",
-    "2020-09-29",
+    "2020",
     genres.adventure,
     "https://image.tmdb.org/t/p/w220_and_h330_face/elZ6JCzSEvFOq4gNjNeZsnRFsvj.jpg",
+    false,
     false
   );
   addNewMovie(
@@ -61,27 +64,31 @@ const loadMovies = function () {
     "2019",
     genres.war,
     "https://image.tmdb.org/t/p/w220_and_h330_face/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg",
-    false
+    false,
+    true
   );
   addNewMovie(
     "Enola Holmes",
     "2019",
     genres.romance,
     "https://image.tmdb.org/t/p/w220_and_h330_face/riYInlsq2kf1AWoGm80JQW5dLKp.jpg",
-    false
+    false,
+    true
   );
   addNewMovie(
     "Mulan",
-    "2020-09-04",
+    "2018",
     genres.martial,
     "https://image.tmdb.org/t/p/w220_and_h330_face/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg",
+    false,
     false
   );
   addNewMovie(
     "American Spies Presents: Girls Rule",
-    "2020-10-06",
+    "2020",
     genres.romance,
     "https://image.tmdb.org/t/p/w220_and_h330_face/ov1sd4gvHpoVheHuJHCXJjadeIT.jpg",
+    true,
     true
   );
   addNewMovie(
@@ -89,13 +96,15 @@ const loadMovies = function () {
     "2020-09-29",
     genres.comedy,
     "https://image.tmdb.org/t/p/w220_and_h330_face/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
-    true
+    true,
+    false
   );
   addNewMovie(
     "Hard Kill",
     "2020-08-25",
     genres.crime,
     "/images/movies/1-2.jpg",
+    false,
     false
   );
   addNewMovie(
@@ -103,17 +112,19 @@ const loadMovies = function () {
     "2019",
     genres.thriller,
     "https://image.tmdb.org/t/p/w220_and_h330_face/z0r3YjyJSLqf6Hz0rbBAnEhNXQ7.jpg",
+    true,
     true
   );
   addNewMovie(
     "AVA",
-    "2020-05-02",
+    "2020",
     genres.thriller,
     "https://image.tmdb.org/t/p/w220_and_h330_face/qzA87Wf4jo1h8JMk9GilyIYvwsA.jpg",
-    false
+    false,
+    true
   );
 };
-console.log(movies);
+
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
 //2. create genre array
@@ -152,32 +163,56 @@ const filterByLatest = function () {};
 //FUNCTION TO CREATE ALL MOVIES
 
 const createAllCard = function () {
-  let row = document.createElement("div");
-  let head = document.createElement("h4");
-  let text = document.createTextNode("TEST");
-  head.appendChild(text);
-  row.setAttribute("class", "row");
-  let container = document.querySelector("#main");
-  container.appendChild(head);
-  container.appendChild(row);
+  let container = document.querySelector("main");
+  container.classList = "container-fluid pl-5 pr-0";
+
+  let head = document.createElement("h3");
+  head.classList = "mt-4 text-white";
+
+  let category = document.createElement("div");
+  category.classList =
+    "row no-gutters row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 mb-4";
+
   //for each movie create a card
   for (let i = 0; i < movies.length; i++) {
     console.log(movies[i]);
     let card = document.createElement("div");
-    card.setAttribute("class", "card");
-    row.appendChild(card);
+    card.classList = "col text-center mb-3 mb-lg-0 px-1";
+
     let img = document.createElement("img");
-    img.setAttribute("src", movies[i].url);
-    img.setAttribute("class", "card-img-top");
-    card.appendChild(img);
-    let cardBody = document.createElement("div");
-    cardBody.setAttribute("class", "card-img-overlay");
-    let cardTitle = document.createElement("h5");
-    cardTitle.setAttribute("class", "card-title");
-    let cardTitleText = document.createTextNode(movies[i].name);
-    cardTitle.appendChild(cardTitleText);
-    cardBody.appendChild(cardTitle);
-    card.appendChild(cardBody);
+    img.classList = "card-img-top img-fluid rounded";
+    img.src = movies[i].url;
+
+    if (movies[i].date === "2020") {
+      head.innerText = "New Releases";
+
+      let span = document.createElement("span");
+      span.classList = "little-element badge";
+      span.innerText = "New";
+      card.appendChild(img);
+      card.appendChild(span);
+      category.appendChild(card);
+      container.appendChild(head);
+      container.appendChild(category);
+    }
+
+    if (movies[i].trending) {
+      head.innerText = "Trending Now";
+      card.appendChild(img);
+      card.appendChild(span);
+      category.appendChild(card);
+      container.appendChild(head);
+      container.appendChild(category);
+    }
+
+    if (movies[i].watched) {
+      head.innerText = "Watch it Again";
+      card.appendChild(img);
+      card.appendChild(span);
+      category.appendChild(card);
+      container.appendChild(head);
+      container.appendChild(category);
+    }
   }
 };
 
@@ -189,4 +224,5 @@ const createMain = function () {
 window.onload = function () {
   loadMovies();
   console.log(movies);
+  createAllCard();
 };
