@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 .navbar {
   margin-left: 48px;
   text-align: left;
@@ -8,13 +7,18 @@
 .mdo {
   font-weight: 800 !important;
 }
->>>>>>> main
+
+#navbar-example2,
+.nav-container {
+  background-color: #141414 !important;
+}
+
 body,
 .jumbotron {
   background-color: #141414;
 }
 @font-face {
-<<<<<<< HEAD
+
   font-family: netflix-font;
   src: url(https://fontmeme.com/netflix-font/);
 }
@@ -27,16 +31,21 @@ body,
   right: 16px;
   height: 33px;
   padding: 0.6rem;
-=======
+
   font-family: "Martel Sans", sans-serif !important;
 }
 .jumbotron h1 {
-  font-weight: 800 !important;
-}
-.navbar {
-  flex-direction: row;
+  font-weight: 500 !important;
+  font-size: ;
 }
 .dropdown {
   margin-left: 500px;
->>>>>>> main
+
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
