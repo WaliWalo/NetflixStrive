@@ -41,7 +41,6 @@ const addNewMovie = function (name, date, genre, url, watched) {
   movies.push(newMovie);
 };
 
-
 const loadMovies = function () {
   addNewMovie(
     "Rogue",
@@ -114,7 +113,6 @@ const loadMovies = function () {
     false
   );
 };
-console.log(movies);
 
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
@@ -122,6 +120,7 @@ console.log(movies);
 //3. loop array to remove repeating genre
 //4. loop genre array to populate input
 const genreInp = function () {
+  console.log(genres);
   let inp = document.querySelector("#genreDropDown");
   genres.forEach((genre) => {
     let item = document.createElement("a");
@@ -227,5 +226,6 @@ const createMain = function () {
 
 window.onload = function () {
   loadMovies();
-  console.log(movies);
+  genreInp();
+  createMain();
 };
