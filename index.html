@@ -11,7 +11,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
+<<<<<<< HEAD
 
+=======
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400;800&display=swap"
+      rel="stylesheet"
+    />
+>>>>>>> main
     <title>Netflix Strive</title>
   </head>
   <!-- Objectives 
@@ -25,16 +32,36 @@
 
     <!-- NAV BAR -->
 
+<<<<<<< HEAD
     <nav id="navbar-example2" class="navbar navbar-light sticky-top text-white">
+=======
+    <nav
+      id="navbar-example2"
+      class="navbar text-white navbar-light navbar-expand-md"
+    >
+>>>>>>> main
       <a class="navbar-brand" href="#">
         <img src="./images/netflix-2-logo-png-transparent.png" width="80px" />
       </a>
       <ul class="nav nav-pills">
         <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link text-white" href="#fat">@fat</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#mdo">@mdo</a>
+=======
+          <a class="nav-link text-white" href="#fat">Home</a>
+        </li>
+        <li class="nav-item mdo" id="mdo">
+          <a class="nav-link text-white" href="#mdo">TV Shows</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#added">Recently Added</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#mylist">My List</a>
+>>>>>>> main
         </li>
         <li class="nav-item dropdown text-white">
           <a
@@ -44,37 +71,188 @@
             role="button"
             aria-haspopup="true"
             aria-expanded="false"
-            >Dropdown</a
-          >
+            ><img src="profile.png" width="30px"
+          /></a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#one">one</a>
-            <a class="dropdown-item" href="#two">two</a>
+            <a
+              class="dropdown-item"
+              data-toggle="modal"
+              data-target="#exampleModal"
+              >Profile Setting</a
+            >
+            <a class="dropdown-item" href="account.html">Account</a>
             <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#three">three</a>
+            <a class="dropdown-item" href="#three">Logout</a>
           </div>
         </li>
       </ul>
     </nav>
 
     <!-- HEADER -->
-    <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <hr class="my-4" />
-      <p>
-        It uses utility classes for typography and spacing to space content out
-        within the larger container.
-      </p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <div class="jumbotron text-white">
+      <h1 class="display-4">TV Shows</h1>
     </div>
     <!-- MAIN -->
+<<<<<<< HEAD
     <main></main>
+=======
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Genre
+      </button>
+      <div
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton"
+        id="genreDropDown"
+      ></div>
+    </div>
+    <div id="mainContainer">
+      <div class="container" id="main"></div>
+    </div>
+>>>>>>> main
     <!-- FOOTER -->
     <footer>
-      <div class="jumbotron">FOOTER</div>
+      <div class="jumbotron">
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-4">
+                    <img
+                      src="images/strive_logo02.png"
+                      style="
+                        width: 100px;
+                        border: 1px solid;
+                        border-radius: 20px;
+                      "
+                      class="p-2"
+                    />
+                    <form>
+                      <div class="form-group">
+                        <input
+                          type="file"
+                          class="form-control-file"
+                          id="exampleFormControlFile1"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-8">
+                    <form>
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="name"
+                          aria-describedby="emailHelp"
+                          placeholder="Your name here"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="language">Language</label>
+                        <select class="form-control" id="language">
+                          <option>Mandarin</option>
+                          <option>English</option>
+                          <option>Italian</option>
+                          <option>Malay</option>
+                          <option>German</option>
+                        </select>
+                      </div>
+                      <hr />
+                      <form>
+                        <div class="form-group">
+                          <label for="formControlRange"
+                            >Maturity Settings</label
+                          >
+                          <input
+                            type="range"
+                            class="form-control-range"
+                            id="formControlRange"
+                          />
+                          <button class="btn btn-dark" readonly>Edit</button>
+                        </div>
+                      </form>
+                      <hr />
+                      <label for="formControlRange">Autoplay Controls</label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="defaultCheck1"
+                        />
+                        <label class="form-check-label" for="defaultCheck1">
+                          Auto play next episode in a series on all devices
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="defaultCheck2"
+                          disabled
+                        />
+                        <label class="form-check-label" for="defaultCheck2">
+                          Autoplay previews while browsing on all devices
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Delete Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="index.js"></script>
