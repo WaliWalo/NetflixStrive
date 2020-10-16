@@ -45,10 +45,10 @@ const addNewMovie = function (name, date, genre, url, watched) {
   movies.push(newMovie);
 };
 addNewMovie(
-  "The Terror Season 1",
-  "2019",
-  genres[0],
-  "/images/movies/1-2.jpg",
+  "The Office Season 1",
+  "2005",
+  genres[4],
+  "/images/movies/1-1.jpg",
   false
 );
 addNewMovie(
@@ -59,31 +59,25 @@ addNewMovie(
   false
 );
 addNewMovie(
-  "The Terror Season 1",
-  "2019",
-  genres[0],
-  "/images/movies/1-2.jpg",
-  false
-);
-addNewMovie(
-  "The Terror Season 1",
-  "2019",
+  "Tom Clancy's Jack Ryan",
+  "2018",
   genres[1],
-  "/images/movies/1-2.jpg",
+  "/images/movies/1-3.jpg",
+  false
+);
+addNewMovie("Matrix", "1999 ", genres[1], "/images/movies/1-4.jpg", false);
+addNewMovie(
+  "The Man in the High Castle",
+  "2015",
+  genres[3],
+  "/images/movies/2-1.jpg",
   false
 );
 addNewMovie(
-  "The Terror Season 1",
-  "2019",
-  genres[0],
-  "/images/movies/1-2.jpg",
-  false
-);
-addNewMovie(
-  "The Terror Season 1",
-  "2019",
-  genres[0],
-  "/images/movies/1-2.jpg",
+  "Desperate Housewives",
+  "2004",
+  genres[2],
+  "/images/movies/2-2.jpg",
   false
 );
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
