@@ -8,31 +8,28 @@ let movie = {
   url: "",
   watched: false,
 };
-
-genres = [
-  "Horror",
-  "Action",
-  "Drama",
-  "Science Fiction",
-  "Comedy",
-  "Crime Film",
-  "Romance",
-  "Western",
-  "Thriller",
-  "Adventure",
-  "Animation",
-  "War",
-  "Documentaries",
-  "Martial Arts",
-];
+genres = {
+  drama: "Drama",
+  scienceFiction: "Science Fiction",
+  comedy: "Comedy",
+  crime: "Crime Film",
+  romance: "Romance",
+  western: "Western",
+  thriller: "Thriller",
+  adventure: "Adventure",
+  animation: "Animation",
+  war: "War",
+  documentaries: "Documentaries",
+  martial: "Martial Arts",
+};
 
 //movie class with name, url, category
 const movies = [];
 
 // Function to add new Movies
 const addNewMovie = function (name, date, genre, url, watched) {
-  const newMovie = Object.assign({}, movie);
-
+  // clone movie object
+  let newMovie = Object.assign({}, movie);
   newMovie.name = name;
   newMovie.date = date;
   newMovie.genre = genre;
@@ -44,13 +41,79 @@ const addNewMovie = function (name, date, genre, url, watched) {
   // push to movies array
   movies.push(newMovie);
 };
-addNewMovie(
-  "The Terror Season 1",
-  "2019",
-  genres[0],
-  "/images/movies/1-2.jpg",
-  false
-);
+
+const loadMovies = function () {
+  addNewMovie(
+    "Rogue",
+    "2020-08-20",
+    genres.romance,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/uOw5JD8IlD546feZ6oxbIjvN66P.jpg",
+    false
+  );
+  addNewMovie(
+    "Welcome to Sudden Death",
+    "2020-09-29",
+    genres.adventure,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/elZ6JCzSEvFOq4gNjNeZsnRFsvj.jpg",
+    false
+  );
+  addNewMovie(
+    "2067",
+    "2019",
+    genres.war,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/7D430eqZj8y3oVkLFfsWXGRcpEG.jpg",
+    false
+  );
+  addNewMovie(
+    "Enola Holmes",
+    "2019",
+    genres.romance,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/riYInlsq2kf1AWoGm80JQW5dLKp.jpg",
+    false
+  );
+  addNewMovie(
+    "Mulan",
+    "2020-09-04",
+    genres.martial,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg",
+    false
+  );
+  addNewMovie(
+    "American Spies Presents: Girls Rule",
+    "2020-10-06",
+    genres.romance,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/ov1sd4gvHpoVheHuJHCXJjadeIT.jpg",
+    true
+  );
+  addNewMovie(
+    "Money Plane",
+    "2020-09-29",
+    genres.comedy,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+    true
+  );
+  addNewMovie(
+    "Hard Kill",
+    "2020-08-25",
+    genres.crime,
+    "/images/movies/1-2.jpg",
+    false
+  );
+  addNewMovie(
+    "Beckam",
+    "2019",
+    genres.thriller,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/z0r3YjyJSLqf6Hz0rbBAnEhNXQ7.jpg",
+    true
+  );
+  addNewMovie(
+    "AVA",
+    "2020-05-02",
+    genres.thriller,
+    "https://image.tmdb.org/t/p/w220_and_h330_face/qzA87Wf4jo1h8JMk9GilyIYvwsA.jpg",
+    false
+  );
+};
 console.log(movies);
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
@@ -88,6 +151,7 @@ const homeBtn = function () {};
 const filterByLatest = function () {};
 
 //FUNCTION TO CREATE ALL MOVIES
+
 const createAllCard = function () {
   let row = document.createElement("div");
   let head = document.createElement("h4");
@@ -123,5 +187,13 @@ const createMain = function () {
   createAllCard();
 };
 
-createMain();
-genreInp();
+window.onload = function () {
+  addNewMovie(
+    "The Terror Season 1",
+    "2019",
+    genre[0],
+    "./images/movies/1-2.jpg",
+    false
+  );
+  console.log(movies);
+};
