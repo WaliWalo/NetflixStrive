@@ -1,3 +1,12 @@
+body,
+.jumbotron {
+  background-color: #141414;
+}
+@font-face {
+  font-family: netflix-font;
+  src: url(https://fontmeme.com/netflix-font/);
+}
+
 .little-element {
   color: white;
   background: red;
