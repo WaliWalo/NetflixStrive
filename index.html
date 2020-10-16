@@ -27,6 +27,7 @@
     <!-- HEADER -->
 
     <!-- NAV BAR -->
+
     <div class="d-inline-flex p-2 bd-highlight">
       <nav
         id="navbar-example2"
@@ -77,6 +78,8 @@
                   data-target="#exampleModal"
                   >Profile Setting</a
                 >
+                <a class="dropdown-item" href="account.html">Account</a>
+            <div role="separator" class="dropdown-divider"></div>
                 <div role="separator" class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#three">Logout</a>
               </div>
@@ -85,6 +88,7 @@
         </div>
       </nav>
     </div>
+
     <!-- HEADER -->
     <div class="jumbotron text-white">
       <h1 class="display-4">TV Shows</h1>
@@ -107,12 +111,145 @@
         id="genreDropDown"
       ></div>
     </div>
-    <div>
+    <div id="mainContainer">
       <div class="container" id="main"></div>
     </div>
     <!-- FOOTER -->
     <footer>
-      <div class="jumbotron">FOOTER</div>
+      <div class="jumbotron">
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-4">
+                    <img
+                      src="images/strive_logo02.png"
+                      style="
+                        width: 100px;
+                        border: 1px solid;
+                        border-radius: 20px;
+                      "
+                      class="p-2"
+                    />
+                    <form>
+                      <div class="form-group">
+                        <input
+                          type="file"
+                          class="form-control-file"
+                          id="exampleFormControlFile1"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-8">
+                    <form>
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="name"
+                          aria-describedby="emailHelp"
+                          placeholder="Your name here"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="language">Language</label>
+                        <select class="form-control" id="language">
+                          <option>Mandarin</option>
+                          <option>English</option>
+                          <option>Italian</option>
+                          <option>Malay</option>
+                          <option>German</option>
+                        </select>
+                      </div>
+                      <hr />
+                      <form>
+                        <div class="form-group">
+                          <label for="formControlRange"
+                            >Maturity Settings</label
+                          >
+                          <input
+                            type="range"
+                            class="form-control-range"
+                            id="formControlRange"
+                          />
+                          <button class="btn btn-dark" readonly>Edit</button>
+                        </div>
+                      </form>
+                      <hr />
+                      <label for="formControlRange">Autoplay Controls</label>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="defaultCheck1"
+                        />
+                        <label class="form-check-label" for="defaultCheck1">
+                          Auto play next episode in a series on all devices
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="defaultCheck2"
+                          disabled
+                        />
+                        <label class="form-check-label" for="defaultCheck2">
+                          Autoplay previews while browsing on all devices
+                        </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Delete Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
     <script src="index.js"></script>
     <script
