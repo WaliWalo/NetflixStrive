@@ -3,6 +3,5 @@ body,
   background-color: #141414;
 }
 @font-face {
-  font-family: netflix-font;
-  src: url(https://fontmeme.com/netflix-font/);
+  font-family: "Martel Sans", sans-serif !important;
 }
