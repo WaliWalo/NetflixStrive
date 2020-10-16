@@ -18,10 +18,8 @@ body,
   font-family: "Martel Sans", sans-serif !important;
 }
 .jumbotron h1 {
-  font-weight: 800 !important;
-}
-.navbar {
-  flex-direction: row;
+  font-weight: 500 !important;
+  font-size: ;
 }
 .dropdown {
   margin-left: 500px;
