@@ -21,7 +21,7 @@
     3. Create Images
     4. Create Footer
   -->
-  <body>
+  <body data-spy="scroll" data-target="#navbar-example2" data-offset="0">
     <!-- HEADER -->
 
     <!-- NAV BAR -->
@@ -72,18 +72,25 @@
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
     <!-- MAIN -->
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Genre
+      </button>
+      <div
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton"
+        id="genreDropDown"
+      ></div>
+    </div>
+    <div>
       <div class="container" id="main"></div>
-      <h4 id="fat">@fat</h4>
-      <p>...</p>
-      <h4 id="mdo">@mdo</h4>
-      <p>...</p>
-      <h4 id="one">one</h4>
-      <p>...</p>
-      <h4 id="two">two</h4>
-      <p>...</p>
-      <h4 id="three">three</h4>
-      <p>...</p>
     </div>
     <!-- FOOTER -->
     <footer>

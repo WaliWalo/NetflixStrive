@@ -1,6 +1,3 @@
-// Movie Object
-movies = [];
-
 movie = {
   title: "",
   genre: "",
@@ -8,7 +5,7 @@ movie = {
   img_path: "",
 };
 
-genre = [
+genres = [
   "Horror",
   "Action",
   "Drama",
@@ -40,7 +37,19 @@ const movies = [
 //2. create genre array
 //3. loop array to remove repeating genre
 //4. loop genre array to populate input
-const categoryInp = function () {};
+const genreInp = function () {
+  let inp = document.querySelector("#genreDropDown");
+  genres.forEach((genre) => {
+    let item = document.createElement("a");
+    item.setAttribute("class", "dropdown-item");
+    item.setAttribute("href", "#");
+    item.setAttribute("value", genre);
+    let text = document.createTextNode(genre);
+    item.appendChild(text);
+    inp.appendChild(item);
+    console.log(genre);
+  });
+};
 
 //FUNCTION TO FILTER BY GENRE
 //1. Get genre
@@ -95,3 +104,4 @@ const createMain = function () {
 };
 
 createMain();
+genreInp();
