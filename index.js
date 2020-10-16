@@ -3,7 +3,6 @@
 let movie = {
   name: "",
   date: "",
-  title: "",
   genre: "",
   url: "",
   watched: false,
@@ -188,12 +187,6 @@ const createMain = function () {
 };
 
 window.onload = function () {
-  addNewMovie(
-    "The Terror Season 1",
-    "2019",
-    genre[0],
-    "./images/movies/1-2.jpg",
-    false
-  );
+  loadMovies();
   console.log(movies);
 };
