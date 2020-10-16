@@ -68,7 +68,7 @@ addNewMovie(
 addNewMovie(
   "The Terror Season 1",
   "2019",
-  genres[0],
+  genres[1],
   "/images/movies/1-2.jpg",
   false
 );
@@ -113,9 +113,10 @@ const filterByGenre = function (genre) {
   let main = document.querySelector("#main");
   main.remove();
   let newMain = document.createElement("div");
+  let mainContainer = document.querySelector("#mainContainer");
   newMain.classList.add("container");
   newMain.setAttribute("id", "main");
-  console.log(movies[0].genre);
+  mainContainer.appendChild(newMain);
   let row = document.createElement("div");
   let head = document.createElement("h4");
   let text = document.createTextNode("TEST");
