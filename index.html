@@ -10,8 +10,12 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
-    <title>NetFlix Strive</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Netflix Strive</title>
   </head>
   <!-- Objectives 
     1. Create sticky nav bar
@@ -19,20 +23,25 @@
     3. Create Images
     4. Create Footer
   -->
-  <body>
+  <body data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+    <!-- HEADER -->
+
     <!-- NAV BAR -->
-    <nav id="navbar-example2" class="navbar navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+
+    <nav id="navbar-example2" class="navbar navbar-light sticky-top text-white">
+      <a class="navbar-brand" href="#">
+        <img src="images/netflix-2-logo-png-transparent.png" width="80px" />
+      </a>
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a class="nav-link" href="#fat">@fat</a>
+          <a class="nav-link text-white" href="#fat">@fat</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#mdo">@mdo</a>
+          <a class="nav-link text-white" href="#mdo">@mdo</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown text-white">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle text-white"
             data-toggle="dropdown"
             href="#"
             role="button"
@@ -65,18 +74,25 @@
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
     <!-- MAIN -->
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Genre
+      </button>
+      <div
+        class="dropdown-menu"
+        aria-labelledby="dropdownMenuButton"
+        id="genreDropDown"
+      ></div>
+    </div>
+    <div>
       <div class="container" id="main"></div>
-      <h4 id="fat">@fat</h4>
-      <p>...</p>
-      <h4 id="mdo">@mdo</h4>
-      <p>...</p>
-      <h4 id="one">one</h4>
-      <p>...</p>
-      <h4 id="two">two</h4>
-      <p>...</p>
-      <h4 id="three">three</h4>
-      <p>...</p>
     </div>
     <!-- FOOTER -->
     <footer>

@@ -1,27 +1,116 @@
-//create movie class with constructors
+// Movie Object
+// initialize movie object
+let movie = {
+  name: "",
+  date: "",
+  title: "",
+  genre: "",
+  url: "",
+  watched: false,
+};
 
-//movie class with name, url, category
-const movies = [
-  {
-    name: "adnaskjl",
-    date: "2019",
-    genre: "Horror",
-    url: "images/movies/1-1.jpg",
-  },
+genres = [
+  "Horror",
+  "Action",
+  "Drama",
+  "Science Fiction",
+  "Comedy",
+  "Crime Film",
+  "Romance",
+  "Western",
+  "Thriller",
+  "Adventure",
+  "Animation",
+  "War",
+  "Documentaries",
+  "Martial Arts",
 ];
 
+//movie class with name, url, category
+const movies = [];
+
+// Function to add new Movies
+const addNewMovie = function (name, date, genre, url, watched) {
+  const newMovie = Object.assign({}, movie);
+
+  newMovie.name = name;
+  newMovie.date = date;
+  newMovie.genre = genre;
+  newMovie.url = url;
+  newMovie.watched = watched;
+
+  // push new movie to Movies array
+
+  // push to movies array
+  movies.push(newMovie);
+};
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
+addNewMovie(
+  "The Terror Season 1",
+  "2019",
+  genres[0],
+  "/images/movies/1-2.jpg",
+  false
+);
 //FUNCTION TO CREATE INPUT BASED ON WHAT GENRE WE HAVE
 //1. Create Input button
 //2. create genre array
 //3. loop array to remove repeating genre
 //4. loop genre array to populate input
-const categoryInp = function () {};
+const genreInp = function () {
+  let inp = document.querySelector("#genreDropDown");
+  genres.forEach((genre) => {
+    let item = document.createElement("a");
+    item.setAttribute("class", "dropdown-item");
+    item.setAttribute("onclick", "filterByGenre(this.innerText)");
+    item.setAttribute("value", genre);
+    let text = document.createTextNode(genre);
+    item.appendChild(text);
+    inp.appendChild(item);
+  });
+};
 
 //FUNCTION TO FILTER BY GENRE
 //1. Get genre
 //2. remove main section
 //3. create movies by genre
-const filterByGenre = function (genre) {};
+const filterByGenre = function (genre) {
+  console.log(genre);
+};
 
 //FUNCTION FOR HOME ON CLICK
 //1. on click remove main section
@@ -46,7 +135,6 @@ const createAllCard = function () {
   container.appendChild(row);
   //for each movie create a card
   for (let i = 0; i < movies.length; i++) {
-    console.log(movies[i]);
     let card = document.createElement("div");
     card.setAttribute("class", "card");
     row.appendChild(card);
@@ -64,9 +152,11 @@ const createAllCard = function () {
     card.appendChild(cardBody);
   }
 };
+
 //create cards
 const createMain = function () {
   createAllCard();
 };
 
 createMain();
+genreInp();
