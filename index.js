@@ -1,7 +1,5 @@
 //create movie class with constructors
 
-const { func } = require("prop-types");
-
 //movie class with name, url, category
 const movies = [
   {
