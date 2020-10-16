@@ -1,10 +1,19 @@
 // Movie Object
 
+<<<<<<< Updated upstream
 const movie = {
+=======
+// initialize movie object
+let movie = {
+>>>>>>> Stashed changes
   name: "",
   date: "",
   genre: "",
   url: "",
+<<<<<<< Updated upstream
+=======
+  watched: false,
+>>>>>>> Stashed changes
 };
 
 genre = [
@@ -36,17 +45,27 @@ const movies = [
   },
 ];
 
+<<<<<<< Updated upstream
 // Function to add new Movies
 const addNewMovie = function (name, date, genre, url, watched) {
   // clone movie object
   let newMovie = Object.assign({}, movie);
+=======
+// Add New Movie
+const addMovie = function (name, date, genre, url, watched) {
+  const newMovie = Object.assign({}, movie);
+>>>>>>> Stashed changes
   newMovie.name = name;
   newMovie.date = date;
   newMovie.genre = genre;
   newMovie.url = url;
   newMovie.watched = watched;
 
+<<<<<<< Updated upstream
   // push new movie to Movies array
+=======
+  // push to movies array
+>>>>>>> Stashed changes
   movies.push(newMovie);
 };
 
@@ -104,11 +123,13 @@ const createAllCard = function () {
     card.appendChild(cardBody);
   }
 };
+
 //create cards
 const createMain = function () {
   createAllCard();
 };
 
+<<<<<<< Updated upstream
 window.onload = function () {
   addNewMovie(
     "The Terror Season 1",
@@ -118,4 +139,9 @@ window.onload = function () {
     false
   );
   console.log(movies);
+=======
+// Onload Method
+window.onload = function () {
+  console.log("This is working");
+>>>>>>> Stashed changes
 };
