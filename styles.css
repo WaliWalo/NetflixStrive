@@ -6,6 +6,10 @@
 .mdo {
   font-weight: 800 !important;
 }
+#navbar-example2,
+.nav-container {
+  background-color: #141414 !important;
+}
 body,
 .jumbotron {
   background-color: #141414;
@@ -14,11 +18,16 @@ body,
   font-family: "Martel Sans", sans-serif !important;
 }
 .jumbotron h1 {
-  font-weight: 800 !important;
-}
-.navbar {
-  flex-direction: row;
+  font-weight: 500 !important;
+  font-size: ;
 }
 .dropdown {
   margin-left: 500px;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
